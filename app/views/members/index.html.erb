@@ -21,9 +21,10 @@
         <td><%= member.firstname %></td>
         <td><%= member.lastname %></td>
         <td><%= member.birthday %></td>
-        <td><%= member.position_id %></td>
+        <td><%= Position.find_by_id(member.position_id).name%></td>
         <td><%= member.number %></td>
-        <td><%= member.team.name %></td>
+        <td><%= Team.find_by_id(member.team_id).name %></td>
+
         <td><%= link_to 'Show', member %></td>
         <td><%= link_to 'Edit', edit_member_path(member) %></td>
         <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>

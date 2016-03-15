@@ -17,7 +17,7 @@
 
 <p>
   <strong>Position:</strong>
-  <%= @member.position_id %>
+  <%= Position.find_by_id(@member.position_id).name%>
 </p>
 
 <p>
