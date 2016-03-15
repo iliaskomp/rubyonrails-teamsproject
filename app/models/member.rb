@@ -1,4 +1,4 @@
 class Member < ActiveRecord::Base
-  belongs_to :position
+  has_one :position
   belongs_to :team
 end
