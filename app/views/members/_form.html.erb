@@ -15,27 +15,35 @@
     <%= f.label :firstname %><br>
     <%= f.text_field :firstname %>
   </div>
+
   <div class="field">
     <%= f.label :lastname %><br>
     <%= f.text_field :lastname %>
   </div>
+
   <div class="field">
-    <%= f.label :birthday %><br>
+    <%= f.label "Birthday (dd/mm/yy)" %><br>
     <%= f.text_field :birthday %>
+    <!-- <%= select_date Date.today, prefix: :start_date %> -->
   </div>
+
   <div class="field">
     <%= f.label :position_id %><br>
-    <%= f.text_field :position_id %>
+    <%= collection_select(:member, :position_id, Position.all, :id, :name) %>
   </div>
+
   <div class="field">
     <%= f.label :number %><br>
     <%= f.number_field :number %>
   </div>
+
   <div class="field">
     <%= f.label :team_id %><br>
-    <%= f.text_field :team_id %>
+    <%= collection_select(:member, :team_id, Team.all, :id, :name) %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
